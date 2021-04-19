@@ -25,25 +25,48 @@ jobs:
           reporter: github-pr-review
           flags: "--module"
 
-  macos:
-    name: tflint / macos
-    runs-on: macos-latest
+  # macos:
+  #   name: tflint / macos
+  #   runs-on: macos-latest
 
-    steps:
-      - name: Clone repo
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Clone repo
+  #       uses: actions/checkout@v2
 
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v1
+  #     - name: Install Terraform
+  #       uses: hashicorp/setup-terraform@v1
 
-      - name: Initialize Terrafrom
-        working-directory: .
-        run: |
-          terraform init
+  #     - name: Initialize Terrafrom
+  #       working-directory: .
+  #       run: |
+  #         terraform init
 
-      - name: tflint
-        uses: reviewdog/action-tflint@master
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
-          flags: "--module"
+  #     - name: tflint
+  #       uses: reviewdog/action-tflint@master
+  #       with:
+  #         github_token: ${{ secrets.github_token }}
+  #         reporter: github-pr-review
+  #         flags: "--module"
+
+  # windows:
+  #   name: tflint / windows
+  #   runs-on: windows-latest
+
+  #   steps:
+  #     - name: Clone repo
+  #       uses: actions/checkout@v2
+
+  #     - name: Install Terraform
+  #       uses: hashicorp/setup-terraform@v1
+
+  #     - name: Initialize Terrafrom
+  #       working-directory: .
+  #       run: |
+  #         terraform init
+
+  #     - name: tflint
+  #       uses: reviewdog/action-tflint@master
+  #       with:
+  #         github_token: ${{ secrets.github_token }}
+  #         reporter: github-pr-review
+  #         flags: "--module"
