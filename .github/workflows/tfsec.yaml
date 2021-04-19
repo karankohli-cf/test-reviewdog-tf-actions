@@ -1,0 +1,47 @@
+name: tfsec
+on: pull_request
+
+jobs:
+  ubuntu:
+    name: tfsec / ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Initialize Terrafrom
+        working-directory: .
+        run: |
+          terraform init
+
+      - name: tfsec
+        uses: reviewdog/action-tfsec@master
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+
+  macos:
+    name: tfsec / macos
+    runs-on: macos-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Initialize Terrafrom
+        working-directory: .
+        run: |
+          terraform init
+
+      - name: tfsec
+        uses: reviewdog/action-tfsec@master
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
