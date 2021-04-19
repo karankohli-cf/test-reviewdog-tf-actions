@@ -1,5 +1,5 @@
 name: tfsec
-on: pull_request
+on: [pull_request]
 
 jobs:
   ubuntu:
@@ -13,7 +13,6 @@ jobs:
       - name: tfsec
         uses: reviewdog/action-tfsec@master
         with:
-          github_token: ${{ secrets.github_token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
-          filter_mode: nofilter
-          level: info
+tfsec
