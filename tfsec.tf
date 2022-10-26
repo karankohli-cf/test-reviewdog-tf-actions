@@ -21,7 +21,7 @@ resource "aws_security_group_rule" "example_rule" {
   to_port   = "65535"
   protocol  = "tcp"
 
-  cidr_blocks      = ["0.0.0.0/0"] # comment
+  cidr_blocks      = ["0.0.0.0/0"] # test
   ipv6_cidr_blocks = ["::/0"]
 }
 
