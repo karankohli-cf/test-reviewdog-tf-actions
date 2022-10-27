@@ -18,7 +18,7 @@ jobs:
         run: |
           terraform init
       - name: Run tfsec with review comment on PR
-        uses: karankohli-cf/action-tfsec@main
+        uses: karankohli-cf/action-tfsec-try@main
         with:
           github_token: ${{ secrets.github_token }}
           working_directory: .
