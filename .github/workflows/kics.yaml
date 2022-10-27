@@ -27,4 +27,4 @@ jobs:
           fail_on_error: true
           filter_mode: nofilter
           level: error
-          kics_flags: "--exclude-severities info,low,medium,trace --ci"
+          kics_flags: "--exclude-severities info,low,medium,trace --ci --ignore_on_exit results"
