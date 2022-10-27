@@ -1,9 +1,9 @@
-name: kics
+name: tfsec
 on: [pull_request]
 
 jobs:
   ubuntu:
-    name: kics / ubuntu
+    name: tfsec / ubuntu
     runs-on: ubuntu-latest
 
     steps:
@@ -17,14 +17,12 @@ jobs:
         working-directory: .
         run: |
           terraform init
-
-      - name: Run kics with reviewdog output on the PR
-        uses: karankohli-cf/action-kics@master
+      - name: Run tfsec with review comment on PR
+        uses: karankohli-cf/action-tfsec@main
         with:
           github_token: ${{ secrets.github_token }}
           working_directory: .
           reporter: github-pr-review
           fail_on_error: true
           filter_mode: nofilter
-          level: error
-          kics_flags: "--exclude-severities info,low,medium,trace --ci"
+          level: info
