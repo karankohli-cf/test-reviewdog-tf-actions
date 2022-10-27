@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run tfsec with reviewdog output on the PR
-        uses: karankohli13-cf/action-tfsec-try@main
+        uses: karankohli-cf/action-tfsec-try@main
         with:
           github_token: ${{ secrets.github_token }}
           level: info # Get more output from reviewdog
