@@ -1,0 +1,27 @@
+{
+	"kics_version": "snapshot-e3ed567b",
+	"files_scanned": 5,
+	"lines_scanned": 91,
+	"files_parsed": 5,
+	"lines_parsed": 91,
+	"files_failed_to_scan": 0,
+	"queries_total": 227,
+	"queries_failed_to_execute": 0,
+	"queries_failed_to_compute_similarity_id": 0,
+	"scan_id": "console",
+	"severity_counters": {
+		"HIGH": 0,
+		"INFO": 0,
+		"LOW": 0,
+		"MEDIUM": 0,
+		"TRACE": 0
+	},
+	"total_counter": 0,
+	"total_bom_resources": 0,
+	"start": "2022-10-28T13:38:35.073383+02:00",
+	"end": "2022-10-28T13:38:38.017715+02:00",
+	"paths": [
+		"."
+	],
+	"queries": []
+}
