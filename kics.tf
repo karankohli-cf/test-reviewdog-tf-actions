@@ -4,7 +4,7 @@ resource "aws_security_group" "web-node" {
   description = "${local.resource_prefix.value} Security Group"
   vpc_id      = aws_vpc.web_vpc.id
 
-  /* ingress {
+  ingress {
     from_port = 80
     to_port   = 80
     protocol  = "tcp"
@@ -24,5 +24,5 @@ resource "aws_security_group" "web-node" {
     protocol  = "-1"
     cidr_blocks = [
     "0.0.0.0/0"]
-  } */
+  }
 }
