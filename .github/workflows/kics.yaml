@@ -18,7 +18,7 @@ jobs:
         run: |
           terraform init
       - name: Run kics with reviewdog output on the PR
-        uses: karankohli-cf/action-kics@master
+        uses: contentful/action-kics@master
         with:
           github_token: ${{ secrets.github_token }}
           working_directory: .
