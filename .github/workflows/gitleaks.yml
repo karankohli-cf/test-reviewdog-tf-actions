@@ -1,26 +1,21 @@
 name: gitleaks
-
-on:
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
+on: [pull_request]
 
 jobs:
-  gitleaks:
+  ubuntu:
+    name: gitleaks / ubuntu
     runs-on: ubuntu-latest
+
     steps:
-      - name: Code checkout
+      - name: Clone repo
         uses: actions/checkout@v2
+
+      - name: Run Gitleaks with reviewdog output on the PR
+        uses: contentful/action-gitleaks@master
         with:
-          fetch-depth: "0"
-      - name: gitleaks-action checkout(priv)
-        uses: actions/checkout@v2
-        with:
-          repository: karankohli-cf/action-gitleaks
-          ref: main
-          path: ./action
-      - name: run git actions
-        uses: ./action
+          github_token: ${{ secrets.github_token }}
+          working_directory: .
+          reporter: github-pr-review
+          fail_on_error: false
+          filter_mode: nofilter
+          level: error
