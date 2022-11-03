@@ -19,3 +19,5 @@ jobs:
           fail_on_error: true
           filter_mode: nofilter
           level: error
+          report_url: "https://github.com/contentful/security-tools-config/issues/new?title=False%20positive%20in%20Gitleaks"
+          gitleaks_config: "contentful/security-tools-config/contents/secrets/gitleaks/gitleaks.toml"
